@@ -5,10 +5,12 @@ Author: Aminah
 """
 while True:
     try:
-        number1 = float(input("Enter first number: "))
-        number2 = float(input("Enter second number: "))
-        z = input("select the operator +/-/* or /: ")
+        # using exception handling
+        number1 = int(input("Input  the number:"))
+        number2 = int(input("Input  the number:"))
         b = number1, number2
+
+        z = (input("select the operator (+,-,*,/): "))
 
 
         def add(x, y):
@@ -39,17 +41,16 @@ while True:
             print(number1, '*', number2, '=', multiply(number1, number2))
         elif z == '/':
             print(number1, '/', number2, '=', divide(number1, number2))
+
         else:
             print("error, please check your code")
 
-    except ValueError:
-        txt = number1.isalpha()
-        if txt:
-            print(b, " is a string")
-        else:
-            print(b, " is not a number")
     except ZeroDivisionError:
         print('Cannot divide by zero')
+
+    except:
+        print("error, please check your code")
+
     # check if user wants another calculation
     # break the while loop if answer is no
     next_calculation = input("Let's do next calculation? (yes/no): ")
