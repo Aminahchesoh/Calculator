@@ -27,21 +27,22 @@ while True:
         number1 = int(input("Input  the first number:"))
         number2 = int(input("Input  the second number:"))
         z = (input("select the operator (+,-,*,/): "))
-    except ZeroDivisionError:
-        print('Cannot divide by zero')
     except ValueError:
         print("Invalid input. Please enter a number.")
         continue
 
-    # calculate the total of 2 number
-    if z == '+':
-        print(number1, '+', number2, '=', add(number1, number2))
-    elif z == '-':
-        print(number1, '-', number2, '=', subtract(number1, number2))
-    elif z == '*':
-        print(number1, '*', number2, '=', multiply(number1, number2))
-    elif z == '/':
-        print(number1, '/', number2, '=', divide(number1, number2))
+    try:
+        # calculate the total of 2 number
+        if z == '+':
+            print(number1, '+', number2, '=', add(number1, number2))
+        elif z == '-':
+            print(number1, '-', number2, '=', subtract(number1, number2))
+        elif z == '*':
+            print(number1, '*', number2, '=', multiply(number1, number2))
+        elif z == '/':
+            print(number1, '/', number2, '=', divide(number1, number2))
+    except ZeroDivisionError:
+        print('Cannot divide by zero')
 
     # check if user wants another calculation
     # break the while loop if answer is no
